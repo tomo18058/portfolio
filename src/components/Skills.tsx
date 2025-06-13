@@ -22,7 +22,7 @@ export default function Skills() {
                 className="flex flex-col items-center justify-center p-4 transition-transform bg-gray-900 shadow-lg rounded-xl hover:scale-105"
             >
                 <span className="mb-2 text-3xl">{skill.emoji}</span>
-                <span className={`font-semibold ${skill.color}`}>{skill.name}</span>
+                <span className="font-semibold text-blue-500">{skill.name}</span>
             </div>
             ))}
         </div>

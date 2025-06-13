@@ -27,8 +27,8 @@ export default function App() {
 
   return (
     <div
-      className="relative min-h-screen overflow-hidden text-white bg-center bg-cover"
-      style={{ backgroundImage: "url(${import.meta.env.BASE_URL}bg-stars.jpg)" }}
+      className="relative min-h-screen overflow-hidden bg-center bg-cover"
+      style={{ backgroundImage: `url(${import.meta.env.BASE_URL}bg-stars.jpg)` }}
     >
       <div className="absolute inset-0 z-0">
         {stars.map((star) => (
@@ -49,7 +49,7 @@ export default function App() {
 
       <div className="relative z-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-center h-screen">
-          <h1 className="text-5xl font-bold animate__animated animate__fadeIn">TOMOKI Portfolio</h1>
+          <h1 className="text-5xl font-bold text-white animate__animated animate__fadeIn">TOMOKI Portfolio</h1>
         </div>
         <Hero />
         <Projects />
