@@ -30,7 +30,7 @@ export default function App() {
   return (
     <div
       className="relative min-h-screen overflow-hidden text-white bg-center bg-cover"
-      style={{ backgroundImage: "url('/bg-stars.jpg')" }}
+      style={{ backgroundImage: "url('public/bg-stars.jpg')" }}
     >
       {/* ✅ これで .absolute な星を相対配置できる */}
       <div className="absolute inset-0 z-50 pointer-events-none">
