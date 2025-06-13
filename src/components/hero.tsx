@@ -1,8 +1,10 @@
+// 🎨 アニメーションとアイコンライブラリ
 import "animate.css";
 import { useInView } from "react-intersection-observer";
 import { FaGithub, FaSquareXTwitter } from "react-icons/fa6";
 
 export default function Hero() {
+    // スクロールで表示検知
     const { ref: nameRef, inView: nameInView } = useInView({ triggerOnce: true });
     const { ref: imgRef, inView: imgInView } = useInView({ triggerOnce: true });
     const { ref: courseRef, inView: courseInView } = useInView({ triggerOnce: true });
@@ -12,13 +14,14 @@ export default function Hero() {
     return (
         <section
         className="relative px-6 py-20 text-white bg-center bg-no-repeat bg-cover"
-
+        // ✅ 背景画像のURLも base パス付きに
+        style={{ backgroundImage: "url('/portfolio/bg-stars.jpg')" }}
         >
-        {/* オーバーレイ（暗めにしてテキスト見やすく） */}
+        {/* オーバーレイ：文字見やすくする */}
         <div className="absolute inset-0 z-0 bg-black bg-opacity-50" />
 
-        {/* Hero本体 */}
         <div className="relative z-10 max-w-3xl mx-auto text-center">
+            {/* 学校名 */}
             <h1
             ref={nameRef}
             className={`mt-6 text-4xl font-extrabold text-cyan-300 drop-shadow-md ${
@@ -28,11 +31,17 @@ export default function Hero() {
             ECCコンピュータ専門学校
             </h1>
 
-            <h2 ref={courseRef} className={`mt-2 text-lg text-white 
-            ${courseInView ? "animate__animated animate__fadeInUp animate__delay-1s" : "opacity-0"}`}>
+            {/* コース名 */}
+            <h2
+            ref={courseRef}
+            className={`text-lg text-white ${
+                courseInView ? "animate__animated animate__fadeInUp animate__delay-1s" : "opacity-0"
+            }`}
+            >
             高度情報処理研究学科 IT開発エキスパートコース
             </h2>
 
+            {/* 名前 + プロフィール写真 */}
             <div
             className={`mt-6 flex items-center justify-center gap-4 ${
                 imgInView ? "animate__animated animate__fadeInUp animate__delay-2s" : "opacity-0"
@@ -44,9 +53,8 @@ export default function Hero() {
                 className="overflow-hidden border-4 rounded-full shadow-lg border-cyan-400"
                 style={{ width: 100, height: 100 }}
             >
-                <img
-                src="images/Image_12.jpeg"
-                alt="プロフィール画像"
+                {/* ✅ プロフィール画像：public/images/Image_12.jpeg に配置している想定 */}
+                <img src={`${import.meta.env.BASE_URL}public/Image_12.jpeg`}alt="プロフィール画像"
                 style={{
                     width: "100%",
                     height: "100%",
@@ -57,6 +65,7 @@ export default function Hero() {
             </div>
             </div>
 
+            {/* 自己紹介 */}
             <p
             ref={descRef}
             className={`max-w-xl mx-auto mt-6 text-base leading-relaxed text-white ${
@@ -67,6 +76,7 @@ export default function Hero() {
             技術力・発想力・実行力を兼ね備えた“実装寄りエンジニア”を目指しています。
             </p>
 
+            {/* SNSリンク */}
             <div
             ref={linkRef}
             className={`flex justify-center gap-6 mt-8 ${

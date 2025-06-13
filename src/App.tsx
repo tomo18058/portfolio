@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Hero from './components/hero';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-import './index.css'; // shooting-star用CSS
+import './index.css';
 
 type Star = { id: number; top: string; left: string; duration: number };
 
@@ -15,10 +15,8 @@ export default function App() {
       const top = Math.random() * 80 + '%';
       const left = Math.random() * 80 + '%';
       const duration = Math.random() * 1.5 + 1;
-
       const newStar: Star = { id, top, left, duration };
       setStars((prev) => [...prev, newStar]);
-
       setTimeout(() => {
         setStars((prev) => prev.filter((star) => star.id !== id));
       }, duration * 1000);
@@ -30,23 +28,20 @@ export default function App() {
   return (
     <div
       className="relative min-h-screen overflow-hidden text-white bg-center bg-cover"
-      style={{ backgroundImage: "url('public/bg-stars.jpg')" }}
+      style={{ backgroundImage: "url(${import.meta.env.BASE_URL}bg-stars.jpg)" }}
     >
-      {/* ✅ これで .absolute な星を相対配置できる */}
-      <div className="absolute inset-0 z-50 pointer-events-none">
+      <div className="absolute inset-0 z-0">
         {stars.map((star) => (
-          <div key={star.id} className="absolute bg-red-500 animate-shooting-star opacity-80"
+          <div
+            key={star.id}
+            className="absolute bg-white animate-shooting-star opacity-80"
             style={{
               top: star.top,
               left: star.left,
-              width: '2px', // より細く
-              height: '60px', // 長めの光線
-              // background: 'linear-gradient(45deg, white, transparent)',
-              background: 'linear-gradient(45deg, rgba(255,223,0,0.9), rgba(255,223,0,0))',
-              opacity: 0.8,
+              width: '2px',
+              height: '80px',
               borderRadius: '1px',
               animationDuration: `${star.duration}s`,
-              boxShadow: '0 0 10px 5px rgba(255, 255, 255, 0.4)', // 発光感
             }}
           />
         ))}
