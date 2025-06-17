@@ -21,7 +21,7 @@ export default function Hero() {
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
             {/* 学校名 */}
-            <h1 ref={nameRef} className={`text-white mt-6 text-4xl font-extrabold  drop-shadow-md ${nameInView ? "animate__animated animate__fadeInUp" : "opacity-0"}`}>
+            <h1 ref={nameRef} className={`!text-white mt-6 text-4xl font-extrabold  drop-shadow-md ${nameInView ? "animate__animated animate__fadeInUp" : "opacity-0"}`}>
             ECCコンピュータ専門学校
             </h1>
             {/* <h1 style={{ color: "white" }}>ECCコンピュータ専門学校</h1> */}
