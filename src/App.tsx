@@ -4,6 +4,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import './index.css';
 
+
 type Star = { id: number; top: string; left: string; duration: number };
 
 export default function App() {
