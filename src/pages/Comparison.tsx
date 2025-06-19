@@ -1,5 +1,3 @@
-// import React from "react";
-
 export default function Comparison(){
     return(
         <div className="flex flex-col items-center min-h-screen py-10 text-white bg-black">
@@ -8,7 +6,7 @@ export default function Comparison(){
                 以下は Rust + WebAssembly を使用したソートアルゴリズムの比較デモです。
             </p>
 
-            <div className="w-full max-w-6xl overflow-hidden border shadow-lg aspect-video rounded-2xl border-cyan-500">
+            <div className="w-full max-w-6xl overflow-hidden border shadow-lg aspect-video rounded-xl border-cyan-500 h-[700px]">
                 <iframe
                     src="/portfolio/wasm-demo/rust_bq/www/index.html"
                     title="Rust WASM Sort Demo"
