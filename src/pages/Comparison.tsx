@@ -6,7 +6,7 @@ export default function Comparison(){
                 以下は Rust + WebAssembly を使用したソートアルゴリズムの比較デモです。
             </p>
 
-            <div className="w-full max-w-6xl overflow-hidden border shadow-lg aspect-video rounded-xl border-cyan-500 h-[700px]">
+            <div className="w-full max-w-6xl mx-auto overflow-hidden border shadow-lg aspect-video rounded-xl border-cyan-500 h-[700px]">
                 <iframe
                     src="/portfolio/wasm-demo/rust_bq/www/index.html"
                     title="Rust WASM Sort Demo"
