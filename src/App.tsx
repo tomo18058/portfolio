@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+// import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Hero from './components/hero';
-import Projects from './components/Projects';
+// import Projects from './components/Projects';
 import Skills from './components/Skills';
+import QuizLink from './components/Projects';
+// import QuizPage from './pages/QuizPage';
 import './index.css';
 
 
@@ -53,9 +56,11 @@ export default function App() {
           <h1 className="text-5xl font-bold text-white animate__animated animate__fadeIn">TOMOKI Portfolio</h1>
         </div>
         <Hero />
-        <Projects />
+        {/* <Projects /> */}
+        <QuizLink/>
         <Skills />
       </div>
     </div>
+    
   );
 }

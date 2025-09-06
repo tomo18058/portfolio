@@ -8,7 +8,4 @@ export default defineConfig({
     outDir: 'dist',
   },
   //  GitHub Pages対策：404でもindex.htmlを返す
-  server: {
-    historyApiFallback: true,
-  }
 });

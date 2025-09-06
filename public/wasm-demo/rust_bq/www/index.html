@@ -100,6 +100,11 @@
         color: #00bcd4;
         text-align: center;
     }
+
+    .footer {
+        color: #00bcd4;
+        text-align: center;
+    }
 </style>
 </head>
 <body>
@@ -195,12 +200,18 @@
             avgBubble.textContent = `バブルソート平均: ${(bubbleTotal / runs).toFixed(3)} ms`;
             totalQuick.textContent = `クイックソート合計: ${quickTotal.toFixed(3)} ms`;
             avgQuick.textContent = `クイックソート平均: ${(quickTotal / runs).toFixed(3)} ms`;
+
+
         };
+
     }
 
     // アプリ起動
     main();
 </script>
+            <div id="footer">
+                Rust + WASM + Vite + GitHub Pages 構成で動作しています。
+            </div>
 
 </body>
 </html>
