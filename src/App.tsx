@@ -6,6 +6,9 @@ import Skills from './components/Skills';
 import QuizLink from './components/Projects';
 // import QuizPage from './pages/QuizPage';
 import './index.css';
+// react-router-domのインポートを追加
+// import { BrowserRouter, Route, Routes, } from "react-router-dom";
+// import {Selfintroduction} from "./pages/self-introduction";
 
 
 type Star = { id: number; top: string; left: string; duration: number };
@@ -30,6 +33,7 @@ export default function App() {
   }, []);
 
   return (
+    
     <div
       className="relative min-h-screen overflow-hidden bg-center bg-cover"
       style={{ backgroundImage: `url(${import.meta.env.BASE_URL}bg-stars.jpg)`, }}
@@ -51,16 +55,17 @@ export default function App() {
         ))}
       </div>
 
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center h-screen">
-          <h1 className="text-5xl font-bold text-white animate__animated animate__fadeIn">TOMOKI Portfolio</h1>
-        </div>
-        <Hero />
-        {/* <Projects /> */}
-        <QuizLink/>
-        <Skills />
-      </div>
+      {/* <div className="relative z-10 px-4 sm:px-6 lg:px-8"> */}
+        {/* <BrowserRouter basename="/portfolio"> */}
+        {/* <Routes> */}
+            {/* <Route path="/" element={ <> */}
+          <div className="flex items-center justify-center h-screen">
+            <h1 className="text-5xl font-bold text-white animate__animated animate__fadeIn">TOMOKI Portfolio</h1>
+          </div>
+          <Hero />
+          {/* <Projects /> */}
+          <QuizLink/>
+          <Skills />
     </div>
-    
   );
 }

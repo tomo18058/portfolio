@@ -2,6 +2,8 @@
 import "animate.css";
 import { useInView } from "react-intersection-observer";
 import { FaGithub, FaSquareXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
 
 export default function Hero() {
     // スクロールで表示検知
@@ -34,20 +36,23 @@ export default function Hero() {
             {/* 名前 + プロフィール写真 */}
             <div className={`mt-6 flex items-center justify-center gap-4 ${imgInView ? "animate__animated animate__fadeInUp animate__delay-2s" : "opacity-0"}`}>
                 
-                <h3 className="text-xl font-semibold text-white">原知輝</h3>
-                
-                <div ref={imgRef}className="overflow-hidden border-4 rounded-full shadow-lg border-cyan-400"style={{ width: 100, height: 100 }}>
+                <Link to="/self-introduction" className="flex items-center gap-4 group hover:opacity-90">
                     
-                    {/* ✅ プロフィール画像：public/images/Image_12.jpeg に配置している想定 */}
-                    <img src={`${import.meta.env.BASE_URL}Image_12.jpeg`}alt="プロフィール画像"
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "top",
-                    }}
-                    />
-                </div>
+                    <h3 className="text-xl font-semibold text-white">原知輝</h3>
+                    
+                    <div ref={imgRef}className="overflow-hidden border-4 rounded-full shadow-lg border-cyan-400"style={{ width: 100, height: 100 }}>
+                        
+                        {/* ✅ プロフィール画像：public/images/Image_12.jpeg に配置している想定 */}
+                        <img src={`${import.meta.env.BASE_URL}Image_12.jpeg`}alt="プロフィール画像"
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            objectPosition: "top",
+                        }}
+                        />
+                    </div>
+                </Link>
             </div>
 
             {/* 自己紹介 */}
